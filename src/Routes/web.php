@@ -1,7 +1,6 @@
 <?php
 
 
-
 Route::group(['prefix' => 'court','middleware' => ['RoleAuthenticate']], function () {
 	Route::get('/', [
 	    'as' => 'court_index',
@@ -93,8 +92,8 @@ Route::group(['prefix' => 'court','middleware' => ['RoleAuthenticate']], functio
 
 Route::group(['prefix' => 'case','middleware' => ['RoleAuthenticate']], function () {
 	Route::get('/', [
-	    'as' => 'case_index',
-	    'uses' => 'CaseController@index',
+	    'as' => 'lawcase_index',
+	    'uses' => 'LawCaseController@index',
 	    'parent' => 'setting_parent',
 	    'name' => 'Case List',
 	    'icon' => '',
@@ -106,8 +105,8 @@ Route::group(['prefix' => 'case','middleware' => ['RoleAuthenticate']], function
 	    'wrap_group_level' => 'Cases',
 	]);
 	Route::get('/create', [
-	    'as' => 'case_create',
-	    'uses' => 'CaseController@create',
+	    'as' => 'lawcase_create',
+	    'uses' => 'LawCaseController@create',
 	    'parent' => 'setting_parent',
 	    'name' => 'Case Create',
 	    'icon' => '',
@@ -118,8 +117,8 @@ Route::group(['prefix' => 'case','middleware' => ['RoleAuthenticate']], function
 	    'wrap_group_level' => 'Cases',
 	]);
 	Route::post('/create', [
-	    'as' => 'case_create_action',
-	    'uses' => 'CaseController@createAction',
+	    'as' => 'lawcase_create_action',
+	    'uses' => 'LawCaseController@createAction',
 	    'parent' => 'setting_parent',
 	    'name' => 'Case Store',
 	    'icon' => '',
@@ -130,8 +129,8 @@ Route::group(['prefix' => 'case','middleware' => ['RoleAuthenticate']], function
 	    'wrap_group_level' => 'Cases',
 	]);
 	Route::get('/edit/{id}', [
-	    'as' => 'case_edit',
-	    'uses' => 'CaseController@edit',
+	    'as' => 'lawcase_edit',
+	    'uses' => 'LawCaseController@edit',
 	    'parent' => 'setting_parent',
 	    'name' => 'Case Edit',
 	    'icon' => '',
@@ -142,8 +141,8 @@ Route::group(['prefix' => 'case','middleware' => ['RoleAuthenticate']], function
 	    'wrap_group_level' => 'Cases',
 	]);
 	Route::post('/edit/{id}', [
-	    'as' => 'case_edit_action',
-	    'uses' => 'CaseController@editAction',
+	    'as' => 'lawcase_edit_action',
+	    'uses' => 'LawCaseController@editAction',
 	    'parent' => 'setting_parent',
 	    'name' => 'Case Update',
 	    'icon' => '',
@@ -154,8 +153,8 @@ Route::group(['prefix' => 'case','middleware' => ['RoleAuthenticate']], function
 	    'wrap_group_level' => 'Cases',
 	]);
 	Route::get('/delete/{id}', [
-	    'as' => 'case_delete',
-	    'uses' => 'CaseController@delete',
+	    'as' => 'lawcase_delete',
+	    'uses' => 'LawCaseController@delete',
 	    'parent' => 'setting_parent',
 	    'name' => 'Case Delete',
 	    'icon' => '',
@@ -166,8 +165,8 @@ Route::group(['prefix' => 'case','middleware' => ['RoleAuthenticate']], function
 	    'wrap_group_level' => 'Cases',
 	]);
 	Route::get('/status/{id}', [
-	    'as' => 'case_status',
-	    'uses' => 'CaseController@Status',
+	    'as' => 'lawcase_status',
+	    'uses' => 'LawCaseController@Status',
 	    'parent' => 'setting_parent',
 	    'name' => 'Case Status',
 	    'icon' => '',

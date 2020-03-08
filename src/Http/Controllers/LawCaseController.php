@@ -5,13 +5,13 @@ namespace kamruljpi\lawsettings\Http\Controllers;
 use Illuminate\Http\Request;
 use kamruljpi\admintemplate\controllers\ProjectBaseController;
 
-class CourtController extends ProjectBaseController
+class LawCaseController extends ProjectBaseController
 {
 	public function __construct() {
-		$this->modelName = 'kamruljpi\lawsettings\Http\Model\Court';
-		$this->formView = 'lawsettings::court.create';
+		$this->modelName = 'kamruljpi\lawsettings\Http\Model\LawCase';
+		$this->formView = 'lawsettings::lawcase.create';
 	}
 	public function getValidation($table = null) {
-        return ['court_name' => 'required'];
+        return ['name' => 'required'];
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCase extends Migration
+class CreateLawCase extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateCase extends Migration
      */
     public function up()
     {
-        Schema::create('cases', function (Blueprint $table) {
-            $table->increments('id_case');
-            $table->tinyInteger('case_name')->nullable();
+        Schema::create('lawcases', function (Blueprint $table) {
+            $table->increments('id_lawcase');
+            $table->string('name')->nullable();
             $table->string('description')->nullable();
             $table->tinyInteger('is_active')->default(0);
             $table->date('deleted_at')->nullable();
@@ -30,6 +30,6 @@ class CreateCase extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cases');
+        Schema::dropIfExists('lawcases');
     }
 }

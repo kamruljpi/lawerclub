@@ -15,7 +15,7 @@ class CreateCourt extends Migration
     {
         Schema::create('courts', function (Blueprint $table) {
             $table->increments('id_court');
-            $table->tinyInteger('court_name')->nullable();
+            $table->string('court_name')->nullable();
             $table->string('description')->nullable();
             $table->tinyInteger('is_active')->default(0);
             $table->date('deleted_at')->nullable();

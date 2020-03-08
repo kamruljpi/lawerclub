@@ -1,12 +1,12 @@
 @extends(config('lawsettings.admin_tmp'),[
-	'title' => 'AdminLTE 3 | Case Page',
-	'content_header' => 'Case Page',
+	'title' => 'AdminLTE 3 | Law Case Page',
+	'content_header' => 'Law Case Page',
 	'breadcrumb' => [
 			'items' => [
 						"<a href='".Url('admin/')."'>Home</a>",
-						"<a href='".Route('case_index')."'>Case</a>"
+						"<a href='".Route('lawcase_index')."'>Law Case</a>"
 					],
-			'active' => "Case Page",
+			'active' => "Law Case Page",
 		],
 	])
 @section('content')
@@ -15,21 +15,21 @@
 	 		<div class="col-md-3"></div>
 			<div class="col-md-6">
 			  <div class="card card-primary">
-		    	@if(isset($data->id_case) && !empty($data->id_case))
-		    		<form role="form" action="{{Route('case_edit_action',$data->id_case)}}" method="post">
-		    		<input type="hidden" name="id_case" value="{{ isset($data->id_case) ? $data->id_case : 0 }}" id="id_case">
+		    	@if(isset($data->id_lawcase) && !empty($data->id_lawcase))
+		    		<form role="form" action="{{Route('lawcase_edit_action',$data->id_lawcase)}}" method="post">
+		    		<input type="hidden" name="id_lawcase" value="{{ isset($data->id_lawcase) ? $data->id_lawcase : 0 }}" id="id_lawcase">
 		    	@else
-		    		<form role="form" action="{{ Route('case_create_action') }}" method="post">
+		    		<form role="form" action="{{ Route('lawcase_create_action') }}" method="post">
 				@endif
 				@csrf
 			      <div class="card-body">
-			        <div class="form-group{{ $errors->has('case_name') ? ' has-error' : '' }}">
-			          	<label for="case_name">Case Name</label>
-			          	<input type="text" class="form-control" name="case_name" id="case_name" placeholder="Case name" value="{{ (isset($data->case_name) && !empty($data->case_name)) ? $data->case_name : old('case_name') }}">
-			          	@if($errors->has('case_name'))
+			        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+			          	<label for="name">Case Name</label>
+			          	<input type="text" class="form-control" name="name" id="name" placeholder="Case name" value="{{ (isset($data->name) && !empty($data->name)) ? $data->name : old('name') }}">
+			          	@if($errors->has('name'))
 	                    	<span class="help-block">
 		          	            <strong>
-		          	            	{{ $errors->first('case_name') }}
+		          	            	{{ $errors->first('name') }}
 		          	            </strong>
 	                    	</span>
 	                  	@endif
