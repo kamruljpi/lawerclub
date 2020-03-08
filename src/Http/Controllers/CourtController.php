@@ -10,5 +10,6 @@ class CourtController extends ProjectBaseController
 {
 	public function __construct() {
 		$this->modelName = 'kamruljpi\lawsettings\Http\Model\Court';
+		$this->formView = 'lawsettings::court.create';
 	}
 }

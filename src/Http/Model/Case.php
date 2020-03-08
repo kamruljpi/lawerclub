@@ -9,5 +9,5 @@ class Case extends Model
 {
 	use SoftDeletes;
 	protected $primaryKey = 'id_case';
-	protected $fillable = ['name', 'description','is_active'];
+	protected $fillable = ['case_name', 'description','is_active'];
 }

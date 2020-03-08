@@ -9,5 +9,5 @@ class Court extends Model
 {
 	use SoftDeletes;
 	protected $primaryKey = 'id_cort';
-	protected $fillable = ['name', 'description','is_active'];
+	protected $fillable = ['court_name', 'description','is_active'];
 }
